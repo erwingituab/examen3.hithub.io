@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta author="Erwin Apace Fabricano">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>3erExamenTI</title>       
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+      <link rel="stylesheet" href="css/estilos.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script> 
+      <script src="js/indexdb.js"></script>    
+      <script src="js/script.js"></script>  
+  </head>
+  <body>  
+    <div class="container">
+      <div class="jumbotron">
+        <img src="img/banner.png" class="img-thumbnail" alt="Cinque Terre" width="1000" height="300">
+      </div> 
+      <h2>Realiza tu primer pedido.</h2>
+      <ul class="nav nav-tabs">
+        <li class="active"><a data-toggle="tab" href="#home"><span class="glyphicon glyphicon-home"></span> Inicio</a></li>
+        <li><a data-toggle="tab" href="#menu1"><span class="glyphicon glyphicon-th-list"></span> Cliente</a></li>
+        <li><a data-toggle="tab" href="#menu2"><span class="glyphicon glyphicon-tags"></span> Producto</a></li>
+        <li><a data-toggle="tab" href="#menu3"><span class="glyphicon glyphicon-shopping-cart"></span> Carrito</a></li>
+      </ul>      
+      <div class="tab-content">
+        <div id="home" class="tab-pane fade in active">
+          <h3>ACRHOBOL</h3>
+          <div class="jumbotron">
+            <img src="img/VACA.jpg" class="img-thumbnail" alt="Cinque Terre" width="1000" height="300">
+          </div> 
+        </div>
+        <div id="menu1" class="tab-pane fade">
+          <h2>Regístrate!!!</h2>
+          <form id="frmRegistro" autocomplete="off">
+            <div class="form-row">
+              <div class="col-md-4 mb-3">
+                <label for="nombre">Nombres</label>
+                <input type="text" class="form-control" id="txtnombre" placeholder="Ingresa tu nombre" >              
+              </div>
+              <div class="col-md-4 mb-3">
+                <label for="apellido">Apellidos</label>
+                <input type="text" class="form-control" id="txtapellido" placeholder="Ingresa tu apellido" >              
+              </div>
+              <div class="col-md-4 mb-3">
+                <label for="email">Email</label>
+                <input type="text" class="form-control" id="txtemail" placeholder="Ingresa tu Email" >
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="col-md-4 mb-3">
+                <label for="ciudad">Ciudad</label>
+                <input type="text" class="form-control" id="txtciudad" placeholder="Ingresa tu ciudad" >              
+              </div>
+              <div class="col-md-4 mb-3">
+                <label for="direccion">Direccion</label>
+                <input type="text" class="form-control" id="txtdireccion" placeholder="Ingresa tu dirección" >              
+              </div>
+              <div class="col-md-4 mb-3">
+                <label for="telefono">Teléfono</label>
+                <input type="text" class="form-control" id="txttelefono" placeholder="Número de telefono" >
+              </div>
+            </div>                   
+            <input type="submit" id="enviar" value="Registrar" class="btn btn-primary" >                         
+          </form>
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th>Nombre</th>
+                <th>apellido</th>
+                <th>Email</th>
+                <th>Ciudad</th>
+                <th>Direccion</th>
+                <th>Teléfono</th>
+                <th>Opciones</th>
+              </tr>
+            </thead>
+            <tbody id="datos">
+
+            </tbody>
+            <tfoot></tfoot>
+          </table>
+        </div>
+        <div id="menu2" class="tab-pane fade">
+          <div class="container-fluid">
+            <h1>REPRODUCTORES</h1>
+            <p>Trabaja con la mejor Genetica Select Sires.</p>
+            <p>Mas produccion de leche mas utilidades para tu finca.</p>
+            <div class="row">
+              <div class="col-sm-4" style="background-color:lavender;">
+                <div class="container">
+                  <h2>7HO6830 BRAXTON</h2>
+                  <p>Alta Genetica</p>            
+                  <img src="img/Braxton2.png" class="img-thumbnail" alt="Braxton" width="304" height="236"> 
+                </div> 
+                <br>  
+                <div class="col-md-12">
+                  <button type="button" id="1" onclick="GuardarCarrito(this)" class="btn btn-success">249.99 sus <span class="glyphicon glyphicon-shopping-cart"></span></button>
+                </div> 
+                <p>.</p>          
+              </div>
+              <div class="col-sm-4" style="background-color:lavenderblush;">
+                <div class="container">
+                  <h2>7JE1038 VALENTINO</h2>
+                  <p>Alta Genetica</p>            
+                  <img src="img/valentinoJS2.png" class="img-thumbnail" alt="Valentino" width="304" height="236"> 
+                </div>
+                <br>
+                <div class="col-md-12">
+                  <button type="button" id="2" onclick="GuardarCarrito(this)" class="btn btn-success">189.99 sus <span class="glyphicon glyphicon-shopping-cart"></span></button>
+                </div> 
+                <p>.</p>             
+              </div>
+              <div class="col-sm-4" style="background-color:lavender;">
+                <div class="container">
+                  <h2>151BS1408 LOST ART</h2>
+                  <p>Alta Genetica</p>            
+                  <img src="img/LOST-ART2.png" class="img-thumbnail" alt="Lost" width="304" height="236">                
+                </div>
+                <br>
+                <div class="col-md-12">
+                  <button type="button" id="3" onclick="GuardarCarrito(this)" class="btn btn-success">149.99 sus <span class="glyphicon glyphicon-shopping-cart"></span></button>
+                </div>
+                <p>.</p>
+              </div>              
+            </div>          
+          </div>
+        </div>
+        <div id="menu3" class="tab-pane fade">
+          <h3>Carrito de compras</h3>
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th>IdProducto</th>
+                <th>Producto</th>
+                <th>Precio</th>                
+              </tr>              
+            </thead>
+            <tbody id="datosp">
+
+            </tbody>
+            <tfoot>              
+            </tfoot>
+          </table>
+          <label for="" id="total">Total: <p id="total">589.97</p></label>
+          <div class="container">
+            <div class="row">
+                <div class="col-12 col-xl-9">
+                    <ul class="list-group">
+                        <h4 class="mb-4">Tus Metodos de Pago</h4>
+                        <li class="list-group-item">
+                            <div>
+                                <label for="metodo2">
+                                    <input
+                                        type="radio"
+                                        id="metodo2"
+                                        name="metodo-pago"
+                                    />
+
+                                    <img
+                                        style="
+                                            width: 70px;
+                                            border: 1px solid rgb(170, 170, 170);
+                                            border-radius: 4px;
+                                        "
+                                        class="p-2 mx-4"
+                                        src="img/120px-Visa_Inc._logo.svg.png"
+                                        alt="Visa Logo"
+                                    />
+                                </label>
+
+                                <div id="oculto2">
+                                    <p>
+                                        Ingresa numero de tarjeta.
+                                        para confirmar tu pago.
+                                    </p>
+
+                                    <input
+                                        type="text"
+                                        placeholder="CCV*"
+                                        class="ccv"
+                                    />
+                                </div>
+
+                                VISA-2054
+                            </div>
+                        </li>
+                    </ul>
+
+                    <ul class="list-group">
+                        <h4 class="mb-4">Otros Metodos de Pago</h4>
+
+                        <li class="list-group-item">
+                            <label for="tarjeta">
+                                <input
+                                    type="radio"
+                                    id="tarjeta"
+                                    name="otros-metodos"
+                                />
+
+                                <img
+                                    style="
+                                        width: 70px;
+                                        border: 1px solid rgb(170, 170, 170);
+                                        border-radius: 4px;
+                                    "
+                                    class="p-2 mx-4"
+                                    src="img/tarjeta-credito.png"
+                                    alt="Tarjeta de credito"
+                                />
+
+                                Tarjeta de credito
+                            </label>
+                        </li>
+                        <li class="list-group-item">
+                            <label for="paypal">
+                                <input
+                                    type="radio"
+                                    id="paypal"
+                                    name="otros-metodos"
+                                />
+
+                                <img
+                                    style="
+                                        width: 70px;
+                                        border: 1px solid rgb(170, 170, 170);
+                                        border-radius: 4px;
+                                    "
+                                    class="p-2 mx-4"
+                                    src="img/paypal.jpg"
+                                    alt="PayPal"
+                                />
+
+                                PayPal
+                            </label>
+                        </li>
+                    </ul>
+                </div>              
+
+                <div class="container mt-3">                  
+                  <!-- Trigger the modal with a button -->
+                  <button type="button" class="btn btn-primary" id="myBtn">Realizar Pago</button>
+                
+                  <!-- The Modal -->
+                  <div class="modal fade" id="myModal">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                      
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                          <h4 class="modal-title">Pago Registrado</h4>
+                          <button type="button" class="close" data-dismiss="modal">×</button>
+                        </div>
+                        
+                        <!-- Modal body -->
+                        <div class="modal-body">
+                          Total Pagado: 589.97 SUS
+                        </div>
+                        
+                        <!-- Modal footer -->
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                        </div>
+                        
+                      </div>
+                    </div>
+                  </div>
+                  
+                </div>
+                
+                <script>
+                $(document).ready(function(){
+                  $("#myBtn").click(function(){
+                    $("#myModal").modal();
+                  });
+                });
+                </script>
+                
+            </div>
+        </div>
+        
+        </div>
+      </div>
+      <br>
+      <footer class="bg-primary text-white text-center text-lg-start">
+        <!-- Grid container -->
+        
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+          © 2020 Copyright:
+          <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+        </div>
+        <!-- Copyright -->
+      </footer>
+    </div>     
+  </body>
+</html>

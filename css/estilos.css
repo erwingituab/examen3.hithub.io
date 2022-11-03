@@ -1,0 +1,15 @@
+*{
+    box-sizing: border-box;
+}
+form{
+    box-sizing: border-box;
+}
+#btnEnviar{
+    margin: 20px 40px 0px 15px;
+    width: 50%;
+}
+.row > .btn{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
